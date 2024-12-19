@@ -1,6 +1,7 @@
 import { View, StyleSheet, FlatList, SafeAreaView } from 'react-native';
 import products from '@assets/data/products';
 import ProductListItem from '@components/ProductListItems';
+import { Link } from 'expo-router';
 
 export default function MenuScreen() {
   return (

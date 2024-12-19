@@ -27,17 +27,18 @@ export default function TabLayout() {
         }),
       }}>
       <Tabs.Screen
-        name="index"
+        name="menu"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Menu',
+          headerShown: false, //hide header
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="digitalcrown.horizontal.arrow.counterclockwise.fill" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="[id]"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Orders',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="list.bullet" color={color} />,
         }}
       />
     </Tabs>
