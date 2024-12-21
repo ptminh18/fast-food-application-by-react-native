@@ -54,7 +54,7 @@ const CartProvider = ({ children }: PropsWithChildren) => {
         );
     };
 
-    const total= 123;
+    const total= items.reduce((sum, item) => (sum += item.product.price * item.quantity), 0);
 
     return (
         <CartContext.Provider 
