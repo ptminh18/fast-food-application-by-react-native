@@ -85,7 +85,14 @@ const CreateProductScreen = () => {
             return false;
         }
         setMessageType('success');
-        setMessage('Added Successfully');
+        //setMessage('Added Successfully');
+        if (isUpdating) {
+            setMessage('Updated Successfully!');
+            return true;
+        }
+        if (!isUpdating) {
+            setMessage('Added Successfully');
+        }
         return true;
     }
 
