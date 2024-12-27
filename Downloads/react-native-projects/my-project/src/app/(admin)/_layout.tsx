@@ -37,9 +37,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="[id]"
+        name="orders"
         options={{
           title: 'Orders',
+          headerShown: false, //hide header
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="list.bullet" color={color} />,
         }}
       />

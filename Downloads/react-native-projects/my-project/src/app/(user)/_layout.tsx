@@ -23,7 +23,7 @@ export default function TabLayout() {
             // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
           },
-          default: {},
+          //default: {},
         }),
       }}>
       <Tabs.Screen
@@ -35,7 +35,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="[id]"
+        name="orders"
         options={{
           title: 'Orders',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="list.bullet" color={color} />,
