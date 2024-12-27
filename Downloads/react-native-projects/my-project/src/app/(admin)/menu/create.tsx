@@ -84,8 +84,9 @@ const CreateProductScreen = () => {
             setMessage('Price is not a number');
             return false;
         }
+        
         setMessageType('success');
-        //setMessage('Added Successfully');
+        
         if (isUpdating) {
             setMessage('Updated Successfully!');
             return true;
