@@ -4,6 +4,7 @@ import { Platform } from 'react-native';
 import { IconSymbol } from '@/src/components/ui/IconSymbol';
 import { Colors } from '@/src/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { HapticTab } from '@/src/components/HapticTab';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -14,7 +15,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors.light.background,
         tabBarInactiveTintColor: 'gainsboro',
         headerShown: false, // show header or not
-        // tabBarButton: HapticTab,
+        tabBarButton: HapticTab,
         
         tabBarStyle: Platform.select({
           ios: {
