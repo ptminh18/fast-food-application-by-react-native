@@ -6,7 +6,6 @@ import { defaultPizzaImage } from '@/src/components/ProductListItems';
 import Button from '@/src/components/button';
 import { useCart } from '@/src/providers/CartProvider';
 import { PizzaSize } from '@/src/types';
-import { useRoute } from '@react-navigation/native';
 
 const sizes: PizzaSize[] = ['S', 'M', 'L', 'XL'];
 
