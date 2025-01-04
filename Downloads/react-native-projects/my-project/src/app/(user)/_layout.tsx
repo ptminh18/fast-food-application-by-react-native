@@ -1,4 +1,4 @@
-import { Tabs } from 'expo-router';
+import { Redirect, Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 
@@ -7,9 +7,15 @@ import { IconSymbol } from '@/src/components/ui/IconSymbol';
 import TabBarBackground from '@/src/components/ui/TabBarBackground';
 import { Colors } from '@/src/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { useAuth } from '@/src/providers/AuthProvider';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const {session} = useAuth();
+
+  if (!session) {
+    return <Redirect href={'/'}/>
+  }
 
   return (
     <Tabs

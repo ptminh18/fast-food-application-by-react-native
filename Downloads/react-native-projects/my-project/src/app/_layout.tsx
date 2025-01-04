@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import CartProvider from '../providers/CartProvider';
+import AuthProvider from '../providers/AuthProvider';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -30,6 +31,7 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <AuthProvider>
       <CartProvider>
         <Stack>
           <Stack.Screen name="(admin)" options={{ headerShown: false}} />
@@ -39,6 +41,7 @@ export default function RootLayout() {
         </Stack>
         <StatusBar style="auto" />
       </CartProvider>
+      </AuthProvider>
     </ThemeProvider>
   );
 }
