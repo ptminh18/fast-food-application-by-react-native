@@ -1,13 +1,19 @@
-import { Tabs } from 'expo-router';
+import { Redirect, Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 import { IconSymbol } from '@/src/components/ui/IconSymbol';
 import { Colors } from '@/src/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { HapticTab } from '@/src/components/HapticTab';
+import { useAuth } from '@/src/providers/AuthProvider';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const isAdmin = useAuth();
+
+  if (!isAdmin) {
+    return <Redirect href={'/'}/>
+  }
 
   return (
     <Tabs

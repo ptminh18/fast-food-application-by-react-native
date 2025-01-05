@@ -11,11 +11,11 @@ import { useAuth } from '@/src/providers/AuthProvider';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-  const {session} = useAuth();
+  // const {session} = useAuth();
 
-  if (!session) {
-    return <Redirect href={'/'}/>
-  }
+  // if (!session) {
+  //   return <Redirect href={'/'}/>
+  // }
 
   return (
     <Tabs
