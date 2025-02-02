@@ -6,19 +6,22 @@ import { defaultPizzaImage } from '@/src/components/ProductListItems';
 import Button from '@/src/components/button';
 import { useCart } from '@/src/providers/CartProvider';
 import { PizzaSize } from '@/src/types';
+import { useProduct } from '@/src/api/products';
 
 const sizes: PizzaSize[] = ['S', 'M', 'L', 'XL'];
 
 const ProductDetailScreen = () => {
+
+  const { id: idString } = useLocalSearchParams();
+  const id = parseFloat(typeof idString === 'string' ? idString : idString[0]);
+  
+  const { data: product } = useProduct(id);
+  
   const { addItem } = useCart();
 
   const router = useRouter();
 
-  const { id } = useLocalSearchParams();
-
   const [selectedSize, setSelectedSize] = useState<PizzaSize>('M');
-
-  const product = products.find((p) => p.id.toString() == id);
 
   const addToCart = () => {
     if (!product) {

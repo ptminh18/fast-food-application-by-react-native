@@ -1,14 +1,16 @@
 import { View, StyleSheet, FlatList, SafeAreaView } from 'react-native';
-import products from '@assets/data/products';
 import ProductListItem from '@components/ProductListItems';
-import { Link } from 'expo-router';
+import { useProductList } from '@/src/api/products';
 
 export default function MenuScreen() {
+
+  const { data: products } = useProductList();
+
   return (
     <SafeAreaView>
       <FlatList data={products} 
-      renderItem={({item}) => <ProductListItem product={item}/>}
-      numColumns={2} 
+      renderItem={({ item }) => <ProductListItem product={item}/>}
+      numColumns={2}
       contentContainerStyle={{ gap:10 }} 
       columnWrapperStyle={{ gap: 10, padding: 5 }}
       />
